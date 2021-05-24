@@ -11,3 +11,7 @@ body .app {
 .app-container {
   padding-bottom: 50px;
 }
+
+#nprogress .spinner{
+  display: none !important;
+}

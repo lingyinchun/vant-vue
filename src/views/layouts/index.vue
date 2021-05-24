@@ -46,3 +46,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.layout-footer{
+  .van-tabbar{
+    background: #fdfdfd;
+  }
+}
+</style>

@@ -1,6 +1,9 @@
 import axios from 'axios'
 import store from '@/store'
 import { Toast } from 'vant'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 // 根据环境不同引入不同api地址
 // import { baseApi } from '@/config'
 // create an axios instance
@@ -15,10 +18,11 @@ service.interceptors.request.use(
   config => {
     // 不传递默认开启loading
     if (!config.hideLoading) {
+      NProgress.start()
       // loading
-      Toast.loading({
-        forbidClick: true
-      })
+      // Toast.loading({
+      //   forbidClick: true
+      // })
     }
     if (store.getters.token) {
       config.headers['X-Token'] = ''
@@ -34,7 +38,8 @@ service.interceptors.request.use(
 // respone拦截器
 service.interceptors.response.use(
   response => {
-    Toast.clear()
+    // Toast.clear()
+    NProgress.done()
     const res = response.data
     if (res.status && res.status !== 200) {
       // 登录超时,重新登录
