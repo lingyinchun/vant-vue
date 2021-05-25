@@ -7,6 +7,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import mixin from './mixin/mixin'
 
 // 设置 js中可以访问 $cdn
 import { $cdn } from '@/config'
@@ -22,6 +23,7 @@ import 'lib-flexible/flexible.js'
 // filters
 import './filters'
 Vue.config.productionTip = false
+Vue.mixin(mixin)
 
 new Vue({
   el: '#app',

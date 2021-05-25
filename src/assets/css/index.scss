@@ -9,9 +9,33 @@ body .app {
 }
 
 .app-container {
+  //padding-top: 46px;
   padding-bottom: 50px;
 }
 
 #nprogress .spinner{
   display: none !important;
+}
+
+.f12 {
+  font-size: 12px;
+}
+.f18 {
+  font-size: 18px;
+}
+.f14 {
+  font-size: 14px;
+}
+.c6 {
+  color: #666;
+}
+.c9 {
+  color: #999;
+}
+.c3 {
+  color: #333;
+}
+.f16 {
+  font-size: 16px;
+  font-weight: bold;
 }

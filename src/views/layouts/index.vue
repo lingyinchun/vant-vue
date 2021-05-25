@@ -6,7 +6,7 @@
       </keep-alive>
       <router-view v-else></router-view>
     </div>
-    <div class="layout-footer">
+    <div class="layout-footer" v-if='!$route.meta.isHideTab'>
       <TabBar :data="tabbars" @change="handleChange" />
     </div>
   </div>
@@ -24,14 +24,32 @@ export default {
           to: {
             name: 'Home'
           },
-          icon: 'home-o'
+          icon: 'wap-home-o',
+          activeIcon: 'wap-home'
         },
         {
-          title: '关于我',
+          title: '分类',
           to: {
-            name: 'About'
+            name: 'category'
           },
-          icon: 'user-o'
+          icon: 'cluster-o',
+          activeIcon: 'cluster'
+        },
+        {
+          title: '购物车',
+          to: {
+            name: 'cartPage'
+          },
+          icon: 'cart-o',
+          activeIcon: 'cart'
+        },
+        {
+          title: '我',
+          to: {
+            name: 'userContent'
+          },
+          icon: 'manager-o',
+          activeIcon: 'manager'
         }
       ]
     }

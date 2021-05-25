@@ -1,12 +1,12 @@
 import qs from 'qs'
 // axios
-import api from './index'
+import { user } from './index'
 // axios
 import request from '@/utils/request'
 
 export function getUserInfo(params) {
   return request({
-    url: api.UserInfo,
+    url: user.UserInfo,
     method: 'post',
     data: qs.stringify(params),
     hideLoading: true // 隐藏 loading 组件
@@ -15,7 +15,7 @@ export function getUserInfo(params) {
 
 export function getCode() {
   return request({
-    url: api.getCode,
+    url: user.getCode,
     method: 'post'
   })
 }

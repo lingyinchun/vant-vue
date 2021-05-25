@@ -25,7 +25,7 @@ service.interceptors.request.use(
       // })
     }
     if (store.getters.token) {
-      config.headers['X-Token'] = ''
+      config.headers['Authorization'] = store.getters.token
     }
     return config
   },

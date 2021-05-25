@@ -1,7 +1,7 @@
 <!-- home -->
 <template>
   <div class="about-container">
-    <van-calendar v-model="show" :round="false" position="right" />
+    <van-calendar v-model="show" :round="false" position="top" />
     <van-cell-group>
       <van-cell title="单元格" value="内容" />
       <van-cell title="单元格" value="内容" label="描述信息" />

@@ -1,32 +1,25 @@
-import api from './index'
+import { user } from './index'
 // axios
 import request from '@/utils/request'
 
 // 登录
 export function login(data) {
   return request({
-    url: api.Login,
+    url: user.Login,
     method: 'post',
     data
   })
 }
-
-// 用户信息 post 方法
-export function getUserInfo(data) {
+// 会员登记信息
+export function getUserGrowthProgress() {
   return request({
-    url: api.UserInfo,
-    method: 'post',
-    data,
-    hideLoading: true
+    url: user.getUserGrowthProgress,
   })
 }
 
-// 用户名称 get 方法
-export function getUserName(params) {
+export function getCollectRelevantCount() {
   return request({
-    url: api.UserName,
-    method: 'get',
-    params,
-    hideLoading: true
+    url: user.getCollectRelevantCount,
+    method: 'post'
   })
 }

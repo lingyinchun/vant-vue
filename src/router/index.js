@@ -27,4 +27,15 @@ export function resetRouter() {
   router.matcher = newRouter.matcher // reset router
 }
 
+router.beforeEach(async(to, from, next) => {
+  // console.log(to, from, next)
+  const title = to.meta.title
+  document.title = title
+  if (to.matched.length !== 0) {
+    next()
+  } else {
+    next('/404')
+  }
+})
+
 export default router
